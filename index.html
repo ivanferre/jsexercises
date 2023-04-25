@@ -14,17 +14,30 @@
     <nav>
         <ul>
             <li><a href="#parsetelnumber">Parse a Telephone Number</a></li>
+            <li><a href="#arrayfunctions">Array Functions</a></li>
         </ul>
     </nav>
 
-    <a id="parsetelnumber"></a>
-    <h2>Parse a Telephone Number</h2>
-    <label for="telnumber">Enter a telephone number:</label>
-    <input type="tel" id="telnumber" name="telnumber">
-    <button onclick="parsePhoneNumber()">Send Telephone Number</button>
-    <p id="debugtelnumber" style="color: red"></p>
-    <p id="resulttelnumber"></p>
+    <article>
+        <a id="parsetelnumber">
+            <h2>Parse a Telephone Number</h2>
+        </a>
 
+        <label for="telnumber">Enter a telephone number:</label>
+        <input type="tel" id="telnumber" name="telnumber">
+        <button onclick="parsePhoneNumber()">Send Telephone Number</button>
+        <p id="debugtelnumber" style="color: red"></p>
+        <p id="resulttelnumber"></p>
+    </article>
+
+    <article id="articlearrayfunctions">
+        <a id="arrayfunctions">
+            <h2>Array Functions</h2>
+        </a>
+        <label for="taf">Test Array Functions:</label>
+        <button id="taf" name="taf" onclick="testArrayFunctions()">Go!</button>
+        <!-- * Content to be generated dinamically from testArrayFunctions() -->
+    </article>
     <script src="functions.js"></script>
 </body>
 
