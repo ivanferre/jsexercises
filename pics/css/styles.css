@@ -1,0 +1,116 @@
+/* TODO
+ * Apply the changes suggested by Susanne.
+    # figure: relative positioning
+    - <img> data-tooltip = "hobbies"
+    - img::after { content: data-tooltip }
+    - tooltip: absolute, on the bottom of the picture.
+
+    # figcaption: absolute,
+    - at the bottom of the figure.
+ */
+
+/* https: //blog.logrocket.com/creating-beautiful-tooltips-with-only-css/ */
+/* https: //www.techonthenet.com/css/selectors/before.php */
+/* https: //codepen.io/bluefantail/pen/PzKvrg */
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+header img {
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    size: 3rem;
+}
+
+h1,
+h2 {
+    font-family: 'Libre Baskerville', serif;
+}
+
+p {
+    font-family: 'Quicksand', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* https: //css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-examples */
+/* https: //developer.mozilla.org/en-US/docs/Web/CSS/justify-content */
+.photolist {
+    /* We first create a flex layout context */
+    display: flex;
+
+    /* Then we define the flow direction 
+     and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+    flex-flow: row wrap;
+
+    /* Then we define how is distributed the remaining space */
+    justify-content: flex-start;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    color: whitesmoke;
+    background-color: darkred;
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px 2px;
+
+    /* Position the tooltip */
+    position: absolute;
+    width: 3rem;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -1.5rem;
+    /* Use half of the width, to center the tooltip */
+}
+
+figure:hover .tooltiptext {
+    visibility: visible;
+}
+
+figure {
+    position: relative;
+}
+
+/* DEBUG */
+figcaption {
+    border: 1px solid blue;
+    position: absolute;
+}
+
+.box {
+    padding: 0.5rem;
+    margin: 12px;
+    /* DEBUG */
+    border: 1px solid red;
+}
+
+/* https: //css-tricks.com/almanac/properties/o/overflow-wrap/ */
+span {
+    overflow-wrap: break-word;
+}
+
+.familyname {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.name:after,
+.city:after,
+.familyname:after {
+    content: '\a';
+    white-space: pre;
+}
