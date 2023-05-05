@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Tip Calculator</title>
+</head>
+
+<body>
+    <h1>Tip Calculator</h1>
+    <form action="">
+        <div class="input">
+            <label for="bill">Amount:</label>
+            <input type="text" id="bill" name="bill">
+        </div>
+        <div class="input">
+            <label for="taxrate">Tax Rate:</label>
+            <input type="text" id="taxrate" name="tax">
+        </div>
+        <div class="input">
+            <label for="tiprate">Tip Rate:</label>
+            <input type="text" id="tiprate" name="tiprate">
+        </div>
+        <div class="input" id="includetax">
+            <p>Include taxes in tip?</p>
+            <input type="radio" id="includeyes" name="includeyes" value="true">
+            <label for="includeyes">Yes</label><br>
+            <input type="radio" id="includeno" name="includeno" value="false">
+            <label for="includeno">No</label><br>
+        </div>
+        <button>Enter</button>
+    </form>
+    <p id="result">0</p>
+    <script src="script.js"></script>
+</body>
+
+</html>

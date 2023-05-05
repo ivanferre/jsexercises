@@ -1,0 +1,54 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+h1 {
+    text-align: center;
+    font-size: 4rem;
+}
+
+form {
+    border: 5px navy solid;
+    margin: 2rem;
+    padding: 2rem;
+}
+
+.input {
+    border: 1px solid red;
+    margin-left: 2rem;
+    margin-right: 50%;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+}
+
+button {
+    margin-left: 50%;
+    margin-right: auto;
+}
+
+#includetax {
+    border: 1px solid red;
+}
+
+#includetax p {
+    display: inline;
+    font-size: larger;
+    text-align: center;
+}
+
+#includetax radio {
+    display: inline;
+}
+
+#result {
+    font-size: 3rem;
+    text-align: center;
+    text-decoration: underline lightgray;
+}
