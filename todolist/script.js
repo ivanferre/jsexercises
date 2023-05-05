@@ -26,10 +26,15 @@ function displayData() {
     const sortedList = titleList.sort();
     console.log(sortedList);
 
-    for (const todo of sortedList) {
+    for (const todo of uncompleted) {
         const li = document.createElement("li");
         li.textContent = todo;
-        li.classList= "completed";
+        ul.appendChild(li);
+    }
+    for (const todo of completed) {
+        const li = document.createElement("li");
+        li.textContent = todo;
+        li.classList = "completed";
         ul.appendChild(li);
     }
 }
