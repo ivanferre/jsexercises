@@ -24,6 +24,7 @@ if (localStorage.getItem("burak")) {
     // And when the translation is completed, then we display it.
     fetch('https://jsonplaceholder.typicode.com/photos?albumId=1')
         .then(response => response.json())
+        .then((data)=>localStorage.setItem("burak", JSON.stringify(data)))
         .then(json => displayData(json))
 }
 
