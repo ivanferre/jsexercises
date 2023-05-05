@@ -12,12 +12,24 @@ if (localStorage.getItem("todos")) {
 function displayData() {
     const todos = JSON.parse(localStorage.getItem("todos"));
     console.log(todos);
-    const sortedList = todos.sort();
+
+    const completed = todos
+        .filter((item) => (item.completed == true))
+        .map((item) => item.title)
+        .sort();
+    const uncompleted = todos
+        .filter((item) => (item.completed == false))
+        .map((item) => item.title)
+        .sort();
+
+    const titleList = todos.map((item) => item.title);
+    const sortedList = titleList.sort();
     console.log(sortedList);
 
     for (const todo of sortedList) {
         const li = document.createElement("li");
-        li.textContent = todo.title;
+        li.textContent = todo;
+        li.classList= "completed";
         ul.appendChild(li);
     }
 }
