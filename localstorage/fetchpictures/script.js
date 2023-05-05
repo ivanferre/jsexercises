@@ -11,14 +11,23 @@
  * we add figures in unordered list instead
  */
 
-// At the beginning, fetch gets only a promise. When the promise
-// is fullfilled (we've got the data), then we translate it to json.
-// And when the translation is completed, then we display it.
-fetch('https://jsonplaceholder.typicode.com/photos?albumId=1')
-    .then(response => response.json())
-    .then(json => displayData(json))
-
+localStorage.setItem("key-omer", "data-omer");
+localStorage.clear();
 const main = document.querySelector("main");
+
+// Check if data is already downloaded.
+if (localStorage.getItem("burak")) {
+    displayData(JSON.parse(localStorage.getItem("burak")));
+} else {
+    // At the beginning, fetch gets only a promise. When the promise
+    // is fullfilled (we've got the data), then we translate it to json.
+    // And when the translation is completed, then we display it.
+    fetch('https://jsonplaceholder.typicode.com/photos?albumId=1')
+        .then(response => response.json())
+        .then(json => displayData(json))
+}
+
+
 
 function displayData(data){
     const ul = document.createElement("ul");
