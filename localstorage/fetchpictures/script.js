@@ -24,18 +24,29 @@ if (localStorage.getItem("burak")) {
     // And when the translation is completed, then we display it.
     fetch('https://jsonplaceholder.typicode.com/photos?albumId=1')
         .then(response => response.json())
-        .then((data)=>localStorage.setItem("burak", JSON.stringify(data)))
-        .then(json => displayData(json))
+        .then((data) => localStorage.setItem("burak", JSON.stringify(data)))
+        .then(()=>{displayData()})
+ //       .then(json => displayData(json))
 }
 
-
-
-function displayData(data){
+function displayData() {
+    console.log("Into displayData()"); // debug
+    let data = JSON.parse(localStorage.getItem("burak"));
+    if (data) {
+        console.log("data is truthy.");
+        console.log(`${data}`);
+    } else {
+        console.log("data is falsy.");
+        console.log(`${data}`);
+    }
     const ul = document.createElement("ul");
     main.appendChild(ul);
 
+    console.log("ul appended."); // debug
+
     //data = data.slice(0, 10);
     data.slice(0, 10).forEach(photoObj => {
+        console.log("Into data slice."); // !debug
         let li = document.createElement("li");
         ul.appendChild(li);
 
