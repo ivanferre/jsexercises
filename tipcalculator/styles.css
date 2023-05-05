@@ -18,6 +18,11 @@ form {
     border: 5px navy solid;
     margin: 2rem;
     padding: 2rem;
+
+    /* Everything should be centered */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
 }
 
 .input {
